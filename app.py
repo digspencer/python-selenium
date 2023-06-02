@@ -1,7 +1,19 @@
-from selenium import webdriver
+import pyautogui
 import time
 
-driver = webdriver.Chrome(executable_path=r'./chromedriver.exe')
+conectar = pyautogui.locateOnScreen('conectar.png')
+seguir = pyautogui.locateOnScreen('enviar.png')
+avancar = pyautogui.locateOnScreen('avançar.png')
 
-driver.get('https:www.google.com.br')
-time.sleep(60)
+def Se_conectar():
+        if conectar:
+            time.sleep(1)
+            pyautogui.click('conectar.png')
+            time.sleep(1)
+            pyautogui.click('enviar.png')
+        else:
+            pyautogui.scroll(-50)
+
+
+
+Se_conectar()

@@ -2,14 +2,17 @@ import pyautogui
 import time
 
 conectar = pyautogui.locateOnScreen('conectar.png')
-seguir = pyautogui.locateOnScreen('enviar.png')
+enviar = pyautogui.locateOnScreen('enviar.png')
+avancar = pyautogui.locateOnScreen('avançar.png')
 
-while not conectar:
-    time.sleep(1)
-    pyautogui.scroll(-50)
+while True:
     if conectar:
         pyautogui.click('conectar.png')
         time.sleep(1)
         pyautogui.click('enviar.png')
-    elif pyautogui.locateOnScreen('avançar.png'):
-            pyautogui.click('avançar.png')
+    elif avancar:
+        pyautogui.click('avançar.png')
+    else:
+        num_rolagem = 5
+        for n in range(num_rolagem):
+            pyautogui.scroll(-50)

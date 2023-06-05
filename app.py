@@ -15,28 +15,28 @@ navegador.find_element('xpath', '//*[@id="username"]').send_keys("maria@hotmail.
 # Maximizando a Janela
 navegador.maximize_window()
 # Digitando a senha
-navegador.find_element('xpath', '//*[@id="password"]').send_keys("MARIA123")
+navegador.find_element('xpath', '//*[@id="password"]').send_keys("diego123")
 # Clicando no botão de Login
 navegador.find_element('xpath', '//*[@id="organic-div"]/form/div[3]/button').click()
-time.sleep(2)
+time.sleep(4)
 # Colocando 'Tech Recruiters Python' na barra de pesquisa 
 navegador.find_element('xpath', '//*[@id="global-nav-typeahead"]/input').send_keys("Tech Recruiter")
 #Aguarde 2 Secs
-time.sleep(2)
+time.sleep(4)
 navegador.find_element('xpath', '//*[@id="global-nav-typeahead"]/input').send_keys(Keys.RETURN)
-time.sleep(2)
+time.sleep(4)
 navegador.find_element('xpath', '//*[@id="search-reusables__filters-bar"]/ul/li[1]/button').click()
 
-time.sleep(1000)
+time.sleep(5)
 #Lógica
 
 while True:
-    if pyautogui.locateOnScreen('conectar.png'): 
-        navegador.find_element('xpath', '//*[@id="ember468"]/span').click()
+    if pyautogui.locateOnScreen('conectar.png', confidence=0.7): 
+        pyautogui.click('conectar.png', confidence=0.7)
         time.sleep(1)
-        navegador.find_element('xpath', '//*[@id="ember563"]/span').click()
+        pyautogui.click('enviar.png', confidence=0.7)
     else:
-        pyautogui.screenshot(-20)
+        pyautogui.scroll(-20)
 
 time.sleep(101)
 

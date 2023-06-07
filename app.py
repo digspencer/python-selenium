@@ -20,7 +20,7 @@ navegador.find_element('xpath', '//*[@id="username"]').send_keys("maria@gmail.co
 # Maximizando a Janela
 navegador.maximize_window()
 # Digitando a senha
-navegador.find_element('xpath', '//*[@id="password"]').send_keys("maria!")
+navegador.find_element('xpath', '//*[@id="password"]').send_keys("maria123!")
 # Clicando no botão de Login
 navegador.find_element('xpath', '//*[@id="organic-div"]/form/div[3]/button').click()
 time.sleep(5)

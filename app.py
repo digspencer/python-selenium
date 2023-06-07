@@ -1,7 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 import time
 import pyautogui
+
 
 
 options = webdriver.ChromeOptions()
@@ -34,10 +36,11 @@ time.sleep(5)
 while True:
     try:
         time.sleep(2)
-        navegador.find_element_by_id('xpath', '//*[@id="ember438"]').click()
+        navegador.find_element('xpath', "//span[@class='artdeco-button__text'][text()='Conectar']").click()
         time.sleep(1)
         navegador.find_element('xpath', '/html/body/div[3]/div/div/div[3]/button[2]/span').click()
         time.sleep(1)
         navegador.find_element('xpath', '/html/body/div[5]/div[3]/div[2]/div/div[1]/main/div/div/div[5]/div/div/button[2]/span').click()
-    except Exception:
         pyautogui.scroll(-20)
+    except Exception:
+        continue
